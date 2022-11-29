@@ -23,8 +23,6 @@ export const useStoreNotes = defineStore("storeNotes", {
   },
   actions: {
     addNote(newNoteContent) {
-      console.log("add note", newNoteContent);
-
       let currentDate = new Date().getTime();
       let id = currentDate.toString();
 

@@ -1,6 +1,6 @@
 <template>
   <div class="notes">
-    <AddEditNote v-model="newNote">
+    <AddEditNote v-model="newNote" ref="addEditNoteRef">
       <template #buttons>
         <button
           class="button is-link has-background-success"
@@ -23,14 +23,13 @@ import Note from "@/components/Notes/Note.vue";
 import AddEditNote from "@/components/Notes/AddEditNote.vue";
 
 const newNote = ref("");
-const newNoteRef = ref(null);
+const addEditNoteRef = ref(null);
 
 const storeNotes = useStoreNotes();
 
 const addNote = () => {
   storeNotes.addNote(newNote.value);
-
   newNote.value = "";
-  newNoteRef.value.focus();
+  addEditNoteRef.value.focusTextarea();
 };
 </script>
