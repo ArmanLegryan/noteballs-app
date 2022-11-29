@@ -19,6 +19,13 @@
         </tr>
       </tbody>
     </table>
+
+    <input
+      class="input"
+      type="text"
+      placeholder="Do you like my noteballs app??"
+      v-auto-focus
+    />
   </div>
 </template>
 
