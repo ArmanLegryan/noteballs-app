@@ -18,6 +18,7 @@
         <button
           class="button is-link has-background-link"
           :disabled="!noteContent"
+          @click="handleUpdateNote"
         >
           Save Note
         </button>
@@ -36,7 +37,11 @@ const storeNotes = useStoreNotes();
 
 const noteContent = ref("");
 
-const id = route.params.id;
+const noteId = route.params.id;
 
-noteContent.value = storeNotes.getNoteContent(id);
+noteContent.value = storeNotes.getNoteContent(noteId);
+
+const handleUpdateNote = () => {
+  storeNotes.updateNote(noteId, noteContent.value);
+};
 </script>
