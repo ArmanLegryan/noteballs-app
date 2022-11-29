@@ -23,8 +23,6 @@
 <script setup>
 import { ref } from "vue";
 import { useStoreNotes } from "@/stores/storeNotes";
-import Note from "@/components/Notes/Note.vue";
-import AddEditNote from "@/components/Notes/AddEditNote.vue";
 
 const newNote = ref("");
 const addEditNoteRef = ref(null);
