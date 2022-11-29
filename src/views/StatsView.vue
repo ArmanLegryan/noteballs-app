@@ -21,6 +21,7 @@
     </table>
 
     <input
+      v-model="loveNoteballs"
       class="input"
       type="text"
       placeholder="Do you like my noteballs app??"
@@ -30,7 +31,13 @@
 </template>
 
 <script setup>
+import { ref } from "vue";
 import { useStoreNotes } from "@/stores/storeNotes";
+import { useWatchCharacters } from "@/use/useWatchCharacters";
 
 const storeNotes = useStoreNotes();
+
+const loveNoteballs = ref("");
+
+useWatchCharacters(loveNoteballs);
 </script>
