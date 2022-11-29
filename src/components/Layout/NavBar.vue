@@ -26,6 +26,7 @@
       >
         <div class="navbar-end">
           <RouterLink
+            @click="showMobileNav = false"
             :to="{ name: 'notes' }"
             class="navbar-item"
             active-class="is-active"
@@ -33,6 +34,7 @@
             Notes
           </RouterLink>
           <RouterLink
+            @click="showMobileNav = false"
             :to="{ name: 'stats' }"
             class="navbar-item"
             active-class="is-active"

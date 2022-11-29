@@ -29,10 +29,12 @@
 
 <script setup>
 import { ref } from "vue";
-import { useRoute } from "vue-router";
+import { useRoute, useRouter } from "vue-router";
 import { useStoreNotes } from "@/stores/storeNotes";
 
 const route = useRoute();
+const router = useRouter();
+
 const storeNotes = useStoreNotes();
 
 const noteContent = ref("");
@@ -43,5 +45,6 @@ noteContent.value = storeNotes.getNoteContent(noteId);
 
 const handleUpdateNote = () => {
   storeNotes.updateNote(noteId, noteContent.value);
+  router.push({ name: "notes", path: "/" });
 };
 </script>
